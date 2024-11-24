@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float slideSpeed;
 
-    float roadWidth = 10;
+    //float roadWidth = 10;
 
     [Header("Elements")]
 
