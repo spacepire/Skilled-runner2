@@ -2075,6 +2075,8 @@ GameObject:
   - component: {fileID: 1614795545536087015}
   - component: {fileID: 736446560787709086}
   - component: {fileID: 1353723177785302347}
+  - component: {fileID: 7056858949490675189}
+  - component: {fileID: 8779134384270578987}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2111,8 +2113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d23770f7761ef54484264769cc21dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   slideSpeed: 5
+  canMove: 0
+  crowdSystem: {fileID: 1353723177785302347}
+  playerAnimator: {fileID: 8779134384270578987}
 --- !u!114 &1353723177785302347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,10 +2130,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a06548406ae0c459e340078942ee91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldenAngle: 90
-  radius: 4
+  goldenAngle: 105
+  radius: 0.3
+  playerAnimator: {fileID: 8779134384270578987}
   runnerParent: {fileID: 8816554926934264507}
   RunnerPrefab: {fileID: 3925877285452000449}
+--- !u!114 &7056858949490675189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240204282835915142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b78a7c358291148857314223bd585b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowdSystem: {fileID: 1353723177785302347}
+--- !u!114 &8779134384270578987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240204282835915142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad57b3162519af4094fa30ff485359a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runnersParent: {fileID: 8816554926934264507}
 --- !u!1 &7330447191002060914
 GameObject:
   m_ObjectHideFlags: 0

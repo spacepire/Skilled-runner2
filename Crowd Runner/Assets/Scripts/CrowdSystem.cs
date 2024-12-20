@@ -6,16 +6,10 @@ public class CrowdSystem : MonoBehaviour
     [SerializeField] float goldenAngle;
     [SerializeField] float radius;
 
-
+    [SerializeField] PlayerAnimator playerAnimator;
     [SerializeField] Transform runnerParent;
     [SerializeField] GameObject RunnerPrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         PlaceRunner();
@@ -42,7 +36,7 @@ public class CrowdSystem : MonoBehaviour
     {
         return radius * Mathf.Sqrt(runnerParent.childCount);
     }
-    /*
+
     public void ApplyBonus(BonusType bonusType, int bonusAmount)
     {
         switch (bonusType)
@@ -63,13 +57,16 @@ public class CrowdSystem : MonoBehaviour
                 break;
         }
     }
-    */
+
     private void AddRunners(int bonusAmount)
     {
         for (int i = 0; i < bonusAmount; i++)
         {
             Instantiate(RunnerPrefab, runnerParent);
         }
+
+
+        playerAnimator.Run();
     }
 
     private void RemoveRunners(int bonusAmount)
